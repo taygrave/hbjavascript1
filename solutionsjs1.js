@@ -74,7 +74,7 @@ var randomJunkIFound = ["katie", "true", true, 19, "gargoyles", "!", 2 + 3, "2 +
 function theDupes(myArray){
     dupeArray = [];
     for (i = 0; i < myArray.length; i++){
-        var afterMe = myArray.slice(i,myArray.length);
+        var afterMe = myArray.slice(i+1,myArray.length);
         if (dupeArray.indexOf(myArray[i]) === -1 && afterMe.indexOf(myArray[i]) !== -1){
             dupeArray.push(myArray[i]);
         }
