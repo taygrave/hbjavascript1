@@ -86,3 +86,50 @@ theDupes(hackbrightStudents);
 theDupes(classroomIds);
 theDupes(randomJunkIFound);
 ///
+
+//QUESTION 4
+
+var cat = {
+        tiredness: 20,
+        hunger: 20,
+        loneliness: 3,
+        happiness: 15,
+        obedience: -5000,
+        feed: function () {
+            console.log("Om nom nom");
+            this.hunger = this.hunger - 5;
+            this.status();
+        },
+        sleep: function () {
+            console.log("ZzzZzzzZzz");
+            this.tiredness = this.tiredness - 5;
+            this.status();
+        },
+        play: function() {
+            console.log("catnip!");
+            this.loneliness -= 0.5;
+            this.tiredness += 3;
+            this.happiness += 2;
+            this.hunger += 10;
+            this.status();
+        },
+        pet: function() {
+            console.log("Purrrrrr!");
+            this.loneliness -= 0.5;
+            this.happiness += 5;
+            this.status();
+        },
+        train: function() {
+            console.log("here kitty, kitty!");
+            this.obedience += 100;
+            this.happiness -= 1;
+            this.tiredness += 0.5;
+            this.hunger += 5;
+            this.status();
+        },
+        status: function () {
+            console.log("Tiredness: " + this.tiredness + ", Hunger: " + this.hunger + ", Loneliness: " + this.loneliness + ", Happiness: "+ this.happiness + ", Obedience: " + this.obedience );
+        }
+};
+
+//
