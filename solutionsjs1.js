@@ -132,4 +132,144 @@ var cat = {
         }
 };
 
-//
+//QUESTION 5
+
+<!doctype html>
+<html>
+<head>
+  <title>Javascript II</title>
+  <style>
+    div {
+      border: 1px solid black;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    #text-box-color {
+      background-color: green;
+    }
+
+    #awesome-box {
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 72px;
+      position: relative;
+      left: 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="text-box-replace">
+  hello<br/>
+  <a href="text-page" id="get-text">Show me the new text!</a><br/>
+  <!--
+  Add an event listener and attach it to the "get-text" id.
+  When the link is clicked:
+    Prevent the default action
+    Change the content of the "text-box-replace" div to "world"
+  -->
+  <script>
+    var showWord = document.getElementById('get-text');
+    function word(evt) {
+      evt.preventDefault();
+      document.getElementById('text-box-replace').innerHTML = "world!";
+    };
+    showWord.addEventListener('click', word);
+  </script>
+</div>
+
+<div id="text-box-color">
+  I am the color green!<br/>
+  <a href="#" id="get-color">Show me the new color!</a><br/>
+  <!--
+  Add an event listener and attach it to the "get-color" id.
+  When the link is clicked:
+    Prevent the default action
+    Change the background color of the "text-box-color" div to red
+    Change the content of the "text-box-color" div to "I am the color red!"
+  -->
+    <script>
+    var changeColor = document.getElementById('get-color');
+    function colorMe(evt) {
+      evt.preventDefault();
+      document.getElementById('text-box-color').style.backgroundColor = 'red';
+      document.getElementById('text-box-color').innerHTML = 'I am RED!';
+    };
+    changeColor.addEventListener('click', colorMe);
+  </script>
+</div>
+
+<div id="melon-box">
+  <img src="http://mda.bigoven.com/pics/rs/256/melon-with-chile-salt-and-lime-3.jpg"/><br/>
+  <a href="#" id="get-melon">Show me the new melon!</a><br/>
+  <!--
+  Add an event listener and attach it to the "get-melon" id.
+  When the link is clicked:
+    Prevent the default action
+    Change the content of the "melon" div to an image of a new melon
+  -->
+  <script>
+    var newMelon = document.getElementById('get-melon');
+    var oldMelon = document.getElementsByTagName('img');
+    // var oldSrc = newMelon.getAttribute('src');
+    function melon(evt){
+      evt.preventDefault();
+      oldMelon[0].setAttribute('src', "http://www.whataboutwatermelon.com/wp-content/uploads/2012/07/pic4.jpg");
+    };
+    newMelon.addEventListener('click', melon);
+
+
+  </script>
+
+</div>
+
+<hr/>
+
+<a href="#" id="be-awesome">Be Awesome!</a><br/>
+
+<!-- The "awesome-box" div below is hidden using a CSS class called "hidden"
+Add an event listener and attach it to the "be-awesome" id.
+When the link is clicked:
+  Prevent the default action
+  Remove the "hidden" class using the toggle function for elem.classList -->
+
+
+
+<!-- Extra Credit 1:
+  Using setTimeout or setInterval, cause the "awesome-box" to toggle its visability once a second
+
+Extra Credit 2:
+  Using setTimeout or setInterval, cause the "awesome-box" to move across the screen from left to right
+
+Extra Credit 3:
+  If you complete Extra Credit 2, cause the "awesome-box" to bounce back and forth across the screen
+ -->
+
+<span id="awesome-box" class='hidden'>AWESOME</span>
+
+<script>
+  var beAwesome = document.getElementById("be-awesome");
+  var awesomeBox = document.getElementById("awesome-box");
+  function awesomeness(evt){
+    evt.preventDefault();
+    awesomeBox.classList.toggle("hidden");
+  };
+
+beAwesome.addEventListener('click', awesomeness);
+
+
+</script>
+
+
+
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>
